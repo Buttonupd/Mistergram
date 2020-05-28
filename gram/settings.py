@@ -41,6 +41,8 @@ STATICFILES_DIR = (
 
 INSTALLED_APPS = [
     'mistergram',
+    'friendship',
+    'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -154,6 +156,12 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+UPLOADCARE = {
+    'pub_key':'cdcde9d88fea3c0d203e',
+    'secret':'8b3cceb6c375319683f6',
+}
 
 django_heroku.settings(locals())
 
