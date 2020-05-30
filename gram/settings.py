@@ -42,6 +42,7 @@ STATICFILES_DIR = (
 INSTALLED_APPS = [
     'mistergram',
     'friendship',
+    'bootstrap4',
     'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
