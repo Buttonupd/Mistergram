@@ -40,10 +40,9 @@ STATICFILES_DIR = (
 # Application definition
 
 INSTALLED_APPS = [
-    'photo_blog',
-    'users',
-    'direct_messages',
-    'friendship',
+    'photo_blog.apps.PhotoBlogConfig',
+    'users.apps.UsersConfig',
+    'direct_messages.apps.DirectMessagesConfig',
     'material',
     'rest_framework',
     'bootstrap4',
@@ -79,7 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
+    
             ],
         },
     },
@@ -169,8 +168,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_HOST_USER = config('EMAIL_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_PASS')
 
 django_heroku.settings(locals())
 

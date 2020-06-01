@@ -14,7 +14,7 @@ class PostTest(TestCase):
                                              content=open('./media/default.jpg',
                                                           'rb').read(),
                                              content_type='image/jpeg'),
-                    location='New York'):
+                    location='Nairobi'):
         return Post.objects.create(caption=caption,
                                    date_posted=timezone.now(),
                                    author=author,
@@ -59,7 +59,7 @@ class CommentTest(TestCase):
                                         content=open('./media/default.jpg',
                                                      'rb').read(),
                                         content_type='image/jpeg'),
-                                location="New York"),
+                                location="Nairobi"),
         author=User.objects.create_user(username=str(random.randint(1,100000)),
                                        password='12345'),
                        text="Great shot"):
