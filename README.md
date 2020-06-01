@@ -1,6 +1,6 @@
 # Mysterygram
 
-![Mysterygram(/static/photo_blog/Circles.jpg)
+![Mysterygram(media/default.jpg)
 
 ## Built By [Dan Kariuki](https://github.com/Buttonupd/)
 
