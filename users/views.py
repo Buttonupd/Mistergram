@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib import messages
@@ -25,10 +24,40 @@ def register(request):
         form = RegistrationForm()
     return render(request, 'users/register.html', {'form': form})
 
+# def profile(request):
+#     if request.method == 'POST':
+#         u_form = UserUpdateForm(request.POST,  instance=request.user)
+#         profile = Profile.objects.get(user=request.user)
+#         profile_form = ProfileForm(request.POST, instance=profile)
+#         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+
+#         if u_form.is_valid() and p_form.is_valid():
+#             u_form.save()
+#             p_form.save()
+#             messages.success(request, f'Your account is updated')
+#             return redirect('login')
+
+#     else:
+#         u_form = UserUpdateForm(instance=request.user)
+        
+#         p_form = ProfileUpdateForm(instance=request.user.profile)
+
+#         context={
+#             'u_form':u_form, 'p_form':p_form
+#         }
+
+#         return render(request, 'users/profile.html', context)
+
+
+# @login_required
+# def save_profile(request):
+#     player, created = Profile.objects.get_or_create(user=request.user)
+
 
 @login_required
 def edit_profile(request):
     if request.method == 'POST':
+        # player, created = Profile.objects.get_or_create(user=request.user)
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(request.POST,
                                          request.FILES,

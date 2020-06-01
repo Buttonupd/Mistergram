@@ -18,11 +18,11 @@
                   </div>
                   <img class="img-fluid img-thumbnail" src="{{ post.photo.url }}">
                   {% if user in post.likes.all %}
-                    <a id=imageElement{{post.id}}  onclick="toggleLike({{post.id}})"><img src="/media/nav_buttons/liked.svg" height="17" width="17"></a>
+                    <a id=imageElement{{post.id}}  onclick="toggleLike({{post.id}})"><img src="/media/nav_buttons/liked.png" height="17" width="17"></a>
                   {% else %}
-                    <a id=imageElement{{post.id}}  onclick="toggleLike({{post.id}})"><img src="/media/nav_buttons/unliked.svg" height="17" width="17"></a>
+                    <a id=imageElement{{post.id}}  onclick="toggleLike({{post.id}})"><img src="/media/nav_buttons/unliked.png" height="17" width="17"></a>
                   {% endif %}
-                  <a href="{% url 'photo_blog-comment' post.id %}"><img src="/media/nav_buttons/comment.svg" height="17" width="17"></a></br>
+                  <a href="{% url 'photo_blog-comment' post.id %}"><img src="/media/nav_buttons/comments.svg" height="17" width="17"></a></br>
                   {% if post.likes.count != 0 %}
                     <a id=likeCount{{post.id}} class="black-link-plain mb-3" href="{% url 'photo_blog-post_likes' post.id %}">{{post.likes.count}} likes</a>
                   {% endif %}
@@ -52,10 +52,10 @@
     </div>
   </div>
 {% else %}
-  <center>
+  
     Start following other <a href="search">users</a> to see their posts. </br> </br>
-    Suggested user: <a href="/user/peterzernia">peterzernia</a>
-  <center>
+    Suggested user: <a href="/user/buttonupd">Buttonupd</a>
+  
 {% endif %}
 
 <script>

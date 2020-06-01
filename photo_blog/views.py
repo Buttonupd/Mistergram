@@ -153,12 +153,12 @@ class LikePostAPI(APIView):
                 liked = False
                 obj.likes.remove(user)
                 like_count = obj.likes.count()
-                img = '<img src="/media/nav_buttons/unliked.svg" height="17" width="17">'
+                img = '<img src="/media/nav_buttons/unliked.png" height="17" width="17">'
             else:
                 liked = True
                 obj.likes.add(user)
                 like_count = obj.likes.count()
-                img = '<img src="/media/nav_buttons/liked.svg" height="17" width="17">'
+                img = '<img src="/media/nav_buttons/liked.png" height="17" width="17">'
             updated = True
         data = {
             "updated": updated,

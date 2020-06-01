@@ -77,6 +77,6 @@ class Notification(models.Model):
     comment = models.ForeignKey(Comment, on_delete=models.CASCADE, null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
-    liked = models.BooleanField(default=False, blank=True)
-    followed = models.BooleanField(default=False, blank=True)
+    liked = models.BooleanField(default=False, null=True)
+    followed = models.BooleanField(default=False, null=True)
     date_posted = models.DateTimeField(null=True, blank=True)
